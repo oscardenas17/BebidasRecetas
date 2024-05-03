@@ -3,11 +3,11 @@ import Header from "../components/Header";
 import Modal from "../components/Modal";
 import { useEffect } from "react";
 import { useAppStore } from "../stores/useAppStore";
+import Notification from "../components/Notification";
 
 const Layout = () => {
   const loadFromStorage = useAppStore((state) => state.loadFromStorage);
   const notification = useAppStore((state) => state.notification);
-
 
   useEffect(() => {
     loadFromStorage();
@@ -20,6 +20,7 @@ const Layout = () => {
       </main>
 
       <Modal />
+      <Notification />
     </>
   );
 };
