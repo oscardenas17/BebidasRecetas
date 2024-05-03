@@ -6,6 +6,8 @@ import { useAppStore } from "../stores/useAppStore";
 
 const Layout = () => {
   const loadFromStorage = useAppStore((state) => state.loadFromStorage);
+  const notification = useAppStore((state) => state.notification);
+
 
   useEffect(() => {
     loadFromStorage();
