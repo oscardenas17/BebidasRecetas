@@ -14,13 +14,13 @@ export default function Modal() {
     for (let i = 1; i <= 6; i++) {
       const ingredient =
         selectedRecipe[`strIngredient${i}` as keyof typeof selectedRecipe];
-    //   const measure =
-        // selectedRecipe[`strMeasure${i}` as keyof typeof selectedRecipe];
-        const measure = selectedRecipe[`strMeasure${i}` as keyof Recipe];
+      //   const measure =
+      // selectedRecipe[`strMeasure${i}` as keyof typeof selectedRecipe];
+      const measure = selectedRecipe[`strMeasure${i}` as keyof Recipe];
 
       if (ingredient && measure) {
         ingredients.push(
-          <li key={i} className="text-lg font-normal">
+          <li key={i} className="text-lg font-normal ml-4">
             {ingredient}-{measure}
           </li>
         );
@@ -81,6 +81,17 @@ export default function Modal() {
                     Instrucciones
                   </Dialog.Title>
                   <p className="text-lg">{selectedRecipe.strInstructions}</p>
+
+                  <div className="mt-5 flex justify-between gap-4">
+                    <button className="w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500"
+                    onClick={closeModal}>
+                      Cerrar
+                    </button>
+
+                    <button className="w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500" onClick={()=>{console.log('nada')}}>
+                      Añadir a favoritos
+                    </button>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
